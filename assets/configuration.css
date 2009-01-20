@@ -1,0 +1,8 @@
+table.selectable input{
+	display:inline;
+	float:none;
+	width:100%;
+}
+div.actions input:first-child  {
+	color:#000;
+}
