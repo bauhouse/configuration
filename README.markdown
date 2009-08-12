@@ -9,9 +9,7 @@
 ## Installation
 
 1. Upload the 'configuration' folder in this archive to your Symphony 'extensions' folder.
-
 2. Enable it by selecting the "Configuration Settings" Extension, choose Enable from the with-selected menu, then click Apply.
-
 3. You can now edit the Configuration Settings file (/manifest/config.php) from within the Symphony administration interface.
 
 
