@@ -1,6 +1,6 @@
 # Configuration Settings Extension
 
-- Version: 1.1
+- Version: 1.2
 - Author: Stephen Bau (stephen@domain7.com)
 - Website: http://www.domain7.com/
 - Build Date: 12 August 2009
@@ -22,6 +22,10 @@
 
 
 ## Change Log
+
+Version 1.2 - 12 August 2009
+
+- Limit access of Configuration Settings page to Developers.
 
 Version 1.1 - 12 August 2009
 

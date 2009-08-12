@@ -4,8 +4,8 @@
 		public function about() {
 			return array(
 				'name'			=> 'Configuration Settings',
-				'version'		=> '1.1',
-				'release-date'	=> '2009-08-11',
+				'version'		=> '1.2',
+				'release-date'	=> '2009-08-12',
 				'author'		=> array(
 					'name'			=> 'Stephen Bau',
 					'website'		=> 'http://www.domain7.com/',
@@ -18,9 +18,10 @@
 		public function fetchNavigation(){ 
 			return array(
 				array(
-					'location' => 200,
-					'name' => 'Configuration',
-					'link'	=> '/settings/edit/'
+					'location'	=> 200,
+					'name'		=> 'Configuration',
+					'link'		=> '/settings/edit/',
+					'limit'		=> 'developer'
 				)
 			);
 		}
