@@ -104,10 +104,10 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 		$link->setAttributeArray(array('rel' => 'stylesheet', 'type' => 'text/css', 'media' => 'screen', 'href' => URL . '/extensions/configuration/assets/configuration.css'));
 		$this->addElementToHead($link, 500);
 
-        $this->setTitle('Symphony &ndash; Configuration &ndash; Edit Settings');
+        $this->setTitle('Symphony &ndash; Configuration Settings');
         $this->setPageType('table');
 
-		$this->appendSubheading('Edit Configuration Settings');
+		$this->appendSubheading('Configuration Settings');
 
 		## Table Headings
 		$aTableHead = array(
