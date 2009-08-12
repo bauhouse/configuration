@@ -1,9 +1,9 @@
 # Configuration Settings Extension
 
-Version: 1.1
-Author: Stephen Bau (stephen@domain7.com)
-Build Date: 12 August 2009
-Requirements: Symphony 2.0
+- Version: 1.1
+- Author: Stephen Bau (stephen@domain7.com)
+- Build Date: 12 August 2009
+- Requirements: Symphony 2.0
 
 
 ## Installation
