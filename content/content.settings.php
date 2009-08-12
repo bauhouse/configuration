@@ -129,8 +129,11 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 				$setting_name = $name;
 				$setting_value = $value;
 				
-				$tableData[] = Widget::TableData(Widget::Input('settings[' . $count . '][group]', $setting_group, 'text'));
-				$tableData[] = Widget::TableData(Widget::Input('settings[' . $count . '][name]', $setting_name, 'text'));
+				$setting_group_data = '<input name="settings[' . $count . '][group]" type="hidden" value="' . $setting_group . '" />' . $setting_group;
+				$setting_name_data = '<input name="settings[' . $count . '][name]" type="hidden" value="' . $setting_name . '" />' . $setting_name;
+				
+				$tableData[] = Widget::TableData($setting_group_data);
+				$tableData[] = Widget::TableData($setting_name_data);
 				$tableData[] = Widget::TableData(Widget::Input('settings[' . $count . '][value]', $setting_value, 'text'));
 			
 				$count++;
