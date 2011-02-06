@@ -1,11 +1,15 @@
 # Configuration Settings Extension
 
-- Version: 1.2
+- Version: 1.3
 - Author: Stephen Bau (stephen@domain7.com)
 - Website: http://www.domain7.com/
-- Build Date: 12 August 2009
-- Requirements: Symphony 2.0
+- Build Date: 5 February 2011
+- Requirements: Symphony 2.2
 
+
+## Note
+
+Be sure that your configuration settings are backed up before using this extension. The only thing this extension does is modify the `manifest/config.php` file. So, if anything goes wrong when saving the configuration settings with this extension, you'll be able to restore the original configuration settings by manually overwriting the file.
 
 ## Installation
 
@@ -22,6 +26,11 @@
 
 
 ## Change Log
+
+Version 1.3 - 5 February 2011
+
+- Removed the ability to display the current version of Symphony to the "Preferences" page.
+- Update extension for Symphony 2.2.
 
 Version 1.2 - 12 August 2009
 
