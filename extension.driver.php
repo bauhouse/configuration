@@ -3,15 +3,19 @@
 	class extension_configuration extends Extension {
 		public function about() {
 			return array(
-				'name'			=> 'Configuration Settings',
-				'version'		=> '1.2',
-				'release-date'	=> '2009-08-12',
+				'name'	=> 'Configuration Settings',
+				'type'	=> 'interface',
+				'version'	=> '1.3',
+				'release-date'	=> '2011-02-05',
 				'author'		=> array(
 					'name'			=> 'Stephen Bau',
 					'website'		=> 'http://www.domain7.com/',
 					'email'			=> 'stephen@domain7.com'
 				),
-				'description'	=> 'Admin interface for Symphony System Preferences'
+				'description'	=> 'Admin interface for Symphony System Preferences',
+				'compatibility' => array(
+					'2.2' => true
+				)
 	 		);
 		}
 		
