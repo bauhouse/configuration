@@ -1,8 +1,11 @@
-table.selectable input{
+table input {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 	display:inline;
 	float:none;
 	width:100%;
 }
-div.actions input:first-child  {
-	color:#000;
+.index .contents {
+	padding-bottom: 5em;
 }
