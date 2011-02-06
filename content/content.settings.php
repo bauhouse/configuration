@@ -161,11 +161,11 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 			switch($this->_flag){
 				
 				case 'saved':
-					$this->pageAlert('Configuration Settings updated successfully.', AdministrationPage::PAGE_ALERT_NOTICE);
+					$this->pageAlert('Configuration Settings updated successfully.', Alert::SUCCESS);
 					break;
 					
 				case 'error':
-					$this->pageAlert('An error occurred.', AdministrationPage::PAGE_ALERT_NOTICE);
+					$this->pageAlert('An error occurred.', Alert::NOTICE);
 					break;
 				
 			}
