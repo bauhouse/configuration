@@ -59,26 +59,16 @@
 		}
 		
 		public function appendPreferences($context){
-			$group1 = new XMLElement('fieldset');
-			$group1->setAttribute('class', 'settings');
-			$group1->appendChild(new XMLElement('legend', 'Version'));	
-
-			$useragent = $this->_Parent->Configuration->get('useragent', 'general');
-			$label1 = new XMLElement('p', $useragent);			
-			
-			$group1->appendChild($label1);						
-			$context['wrapper']->appendChild($group1);
-
-			$group2 = new XMLElement('fieldset');
-			$group2->setAttribute('class', 'settings');
-			$group2->appendChild(new XMLElement('legend', 'Site Name'));			
+			$group = new XMLElement('fieldset');
+			$group->setAttribute('class', 'settings');
+			$group->appendChild(new XMLElement('legend', 'Site Name'));			
 
 			$sitename = $this->_Parent->Configuration->get('sitename', 'general');
-			$label2 = new XMLElement('label', 'Website Name');			
-			$label2->appendChild(Widget::Input('settings[general][sitename]', $sitename, 'text'));
+			$label = new XMLElement('label', 'Website Name');			
+			$label->appendChild(Widget::Input('settings[general][sitename]', $sitename, 'text'));
 			
-			$group2->appendChild($label2);						
-			$context['wrapper']->appendChild($group2);
+			$group->appendChild($label);						
+			$context['wrapper']->appendChild($group);
 
 		}
 	}
