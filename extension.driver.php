@@ -23,7 +23,7 @@
 			return array(
 				array(
 					'location'	=> 200,
-					'name'		=> 'Configuration',
+					'name'		=> __('Configuration'),
 					'link'		=> '/settings/edit/',
 					'limit'		=> 'developer'
 				)
