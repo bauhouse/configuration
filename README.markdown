@@ -1,6 +1,6 @@
 # Configuration Settings Extension
 
-- Version: 1.3.1
+- Version: 1.3.2
 - Author: Stephen Bau (stephen@domain7.com)
 - Website: http://www.domain7.com/
 - Build Date: 10 February 2011
@@ -26,6 +26,10 @@ Be sure that your configuration settings are backed up before using this extensi
 
 
 ## Change Log
+
+Version 1.3.2 - 10 February 2011
+
+- Reformat Configuration Settings page as an edit form rather than an index table to be more consistent with Symphony interface conventions.
 
 Version 1.3.1 - 10 February 2011
 

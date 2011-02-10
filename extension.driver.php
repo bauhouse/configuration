@@ -5,7 +5,7 @@
 			return array(
 				'name'	=> 'Configuration Settings',
 				'type'	=> 'interface',
-				'version'	=> '1.3.1',
+				'version'	=> '1.3.2',
 				'release-date'	=> '2011-02-10',
 				'author'		=> array(
 					'name'			=> 'Stephen Bau',
