@@ -13,7 +13,7 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
     function __construct(&$parent){
         parent::__construct($parent);
 		
-        $this->_driver = $this->_Parent->ExtensionManager->create('configuration');
+        $this->_driver = Symphony::ExtensionManager()->create('configuration');
     }
 	
 	function view(){			
@@ -38,7 +38,7 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 			## If there is no action function, just return without doing anything
 			if($type == 'action') return;
 			
-			$this->_Parent->errorPageNotFound();
+			Symphony::Engine()->errorPageNotFound();
 			
 		}
 		
@@ -65,7 +65,7 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 		);			
 		
 		## Get Configuration Settings and display as a table list
-		$config_settings = $this->_Parent->Configuration->get();
+		$config_settings = Symphony::Configuration()->get();
 
 		$tableData = array();
 
@@ -117,7 +117,7 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 		);			
 		
 		## Get Configuration Settings and display as a table list
-		$config_settings = $this->_Parent->Configuration->get();
+		$config_settings = Symphony::Configuration()->get();
 
 		$tableData = array();
 		$count = 0;
@@ -185,9 +185,9 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 			$setting_name = $settings[$i]['name'];
 			$setting_value = $settings[$i]['value'];
 
-			$this->_Parent->Configuration->set($setting_name, $setting_value, $setting_group);
+			Symphony::Configuration()->set($setting_name, $setting_value, $setting_group);
 		}
-		$this->_Parent->saveConfig();
+		Administration::instance()->saveConfig();
 		return redirect(BASE_URL . '/edit/saved/');
 	}
 
