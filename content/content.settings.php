@@ -101,53 +101,46 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 	function __viewEdit(){			
 	
 		$link = new XMLElement('link');
-		$link->setAttributeArray(array('rel' => 'stylesheet', 'type' => 'text/css', 'media' => 'screen', 'href' => URL . '/extensions/configuration/assets/configuration.css'));
 		$this->addElementToHead($link, 500);
 
         $this->setTitle('Symphony &ndash; Configuration Settings');
-        $this->setPageType('table');
+        $this->setPageType('form');
 
 		$this->appendSubheading('Configuration Settings');
 
-		## Table Headings
-		$aTableHead = array(
-			array('Group', 'col'),
-			array('Setting', 'col'),
-			array('Value', 'col')
-		);			
-		
 		## Get Configuration Settings and display as a table list
 		$config_settings = Symphony::Configuration()->get();
 
-		$tableData = array();
 		$count = 0;
 
 		foreach($config_settings as $key => $groups)
 		{
+			$setting_group = $key;
+
+			$fieldset = new XMLElement('fieldset');
+			$fieldset->setAttribute('class', 'settings type-file');
+			$fieldset->appendChild(new XMLElement('legend', __(strtoupper(str_replace('_', ' ', $setting_group)))));
+
 			foreach($groups as $name => $value) {
-				$setting_group = $key;
 				$setting_name = $name;
 				$setting_value = $value;
 				
-				$setting_group_data = '<input name="settings[' . $count . '][group]" type="hidden" value="' . $setting_group . '" />' . $setting_group;
+				$setting_group_data = '<input name="settings[' . $count . '][group]" type="hidden" value="' . $setting_group . '" />' . strtoupper($setting_group);
 				$setting_name_data = '<input name="settings[' . $count . '][name]" type="hidden" value="' . $setting_name . '" />' . $setting_name;
 				
-				$tableData[] = Widget::TableData($setting_group_data);
-				$tableData[] = Widget::TableData($setting_name_data);
-				$tableData[] = Widget::TableData(Widget::Input('settings[' . $count . '][value]', $setting_value, 'text'));
-			
+				$label = Widget::Label(ucfirst(str_replace('_', ' ', $setting_name)));
+				$label->appendChild(Widget::Input('settings[' . $count . '][group]', $setting_group, 'hidden'));
+				$label->appendChild(Widget::Input('settings[' . $count . '][name]', $setting_name, 'hidden'));
+				$label->appendChild(Widget::Input('settings[' . $count . '][value]', $setting_value));
+				$fieldset->appendChild($label);
+				
 				$count++;
-			
-				$aTableBody[] = Widget::TableRow($tableData, ($bEven ? 'even' : NULL));
 
-				$bEven = !$bEven;
-					
-				unset($tableData);		
 			}
-		}
 
-		$table = Widget::Table(Widget::TableHead($aTableHead), NULL, Widget::TableBody($aTableBody));
-		$this->Form->appendChild($table);
+			$this->Form->appendChild($fieldset);
+
+		}
 
 		## Save Button
 		$div = new XMLElement('div');
@@ -172,11 +165,6 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 		}
 	}
 
-/*	function __actionEdit(){			
-		redirect(BASE_URL . '/edit/');
-	}
-*/
-	
 	function save() {
 		$settings = $_POST['settings'];
 		$count = count($settings) - 1;
