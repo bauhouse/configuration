@@ -5,8 +5,8 @@
 			return array(
 				'name'	=> 'Configuration Settings',
 				'type'	=> 'interface',
-				'version'	=> '1.3',
-				'release-date'	=> '2011-02-05',
+				'version'	=> '1.3.3',
+				'release-date'	=> '2011-02-10',
 				'author'		=> array(
 					'name'			=> 'Stephen Bau',
 					'website'		=> 'http://www.domain7.com/',
@@ -53,18 +53,18 @@
 			$setting_name = 'sitename';
 			$setting_value = $settings['general']['sitename'];
 
-			$this->_Parent->Configuration->set($setting_name, $setting_value, $setting_group);
-			$this->_Parent->saveConfig();
+			Symphony::Configuration()->set($setting_name, $setting_value, $setting_group);
+			Administration::instance()->saveConfig();
 
 		}
 		
 		public function appendPreferences($context){
 			$group = new XMLElement('fieldset');
 			$group->setAttribute('class', 'settings');
-			$group->appendChild(new XMLElement('legend', 'Site Name'));			
+			$group->appendChild(new XMLElement('legend', __('Site Name')));			
 
-			$sitename = $this->_Parent->Configuration->get('sitename', 'general');
-			$label = new XMLElement('label', 'Website Name');			
+			$sitename = Symphony::Configuration()->get('sitename', 'general');
+			$label = new XMLElement('label', __('Website Name'));			
 			$label->appendChild(Widget::Input('settings[general][sitename]', $sitename, 'text'));
 			
 			$group->appendChild($label);						
