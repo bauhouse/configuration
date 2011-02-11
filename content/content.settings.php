@@ -51,10 +51,10 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 		$link = new XMLElement('link');
 		$this->addElementToHead($link, 500);
 
-		$this->setTitle('Symphony &ndash; Configuration Settings');
+		$this->setTitle(__('%1$s &ndash; %2$s', array(__('Symphony'), __('Configuration'))));
         $this->setPageType('table');
 
-		$this->appendSubheading('Configuration Settings');
+		$this->appendSubheading(__('Configuration'));
 		
 		## Table Headings
 		$aTableHead = array(
@@ -93,7 +93,7 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 		## Edit Button
 		$tableActions = new XMLElement('div');
 		$tableActions->setAttribute('class', 'actions');
-		$tableActions->appendChild(Widget::Input('action[edit]', 'Edit Settings', 'submit'));
+		$tableActions->appendChild(Widget::Input('action[edit]', __('Edit Settings'), 'submit'));
         $this->Form->appendChild($tableActions); 
 	}
 
@@ -102,10 +102,10 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 		$link = new XMLElement('link');
 		$this->addElementToHead($link, 500);
 
-        $this->setTitle('Symphony &ndash; Configuration Settings');
+		$this->setTitle(__('%1$s &ndash; %2$s', array(__('Symphony'), __('Configuration'))));
         $this->setPageType('form');
 
-		$this->appendSubheading('Configuration Settings');
+		$this->appendSubheading(__('Configuration'));
 
 		## Get Configuration Settings and display as a table list
 		$config_settings = Symphony::Configuration()->get();
@@ -144,7 +144,7 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 		## Save Button
 		$div = new XMLElement('div');
 		$div->setAttribute('class', 'actions');
-		$div->appendChild(Widget::Input('action[save]', 'Save Settings', 'submit', array('accesskey' => 's')));
+		$div->appendChild(Widget::Input('action[save]', __('Save Settings'), 'submit', array('accesskey' => 's')));
 		$this->Form->appendChild($div);
 
 		## Notice Messages
@@ -153,11 +153,11 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 			switch($this->_flag){
 				
 				case 'saved':
-					$this->pageAlert('Configuration Settings updated successfully.', Alert::SUCCESS);
+					$this->pageAlert(__('Configuration Settings updated successfully.'), Alert::SUCCESS);
 					break;
 					
 				case 'error':
-					$this->pageAlert('An error occurred.', Alert::NOTICE);
+					$this->pageAlert(__('An error occurred.'), Alert::NOTICE);
 					break;
 				
 			}

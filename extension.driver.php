@@ -61,10 +61,10 @@
 		public function appendPreferences($context){
 			$group = new XMLElement('fieldset');
 			$group->setAttribute('class', 'settings');
-			$group->appendChild(new XMLElement('legend', 'Site Name'));			
+			$group->appendChild(new XMLElement('legend', __('Site Name')));			
 
 			$sitename = Symphony::Configuration()->get('sitename', 'general');
-			$label = new XMLElement('label', 'Website Name');			
+			$label = new XMLElement('label', __('Website Name'));			
 			$label->appendChild(Widget::Input('settings[general][sitename]', $sitename, 'text'));
 			
 			$group->appendChild($label);						
