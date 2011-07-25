@@ -130,7 +130,7 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 				$label = Widget::Label(ucfirst(str_replace('_', ' ', $setting_name)));
 				$label->appendChild(Widget::Input('settings[' . $count . '][group]', $setting_group, 'hidden'));
 				$label->appendChild(Widget::Input('settings[' . $count . '][name]', $setting_name, 'hidden'));
-				$label->appendChild(Widget::Input('settings[' . $count . '][value]', $setting_value));
+				$label->appendChild(Widget::Input('settings[' . $count . '][value]', htmlspecialchars($setting_value)));
 				$fieldset->appendChild($label);
 				
 				$count++;
