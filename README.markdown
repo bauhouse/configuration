@@ -1,6 +1,6 @@
 # Configuration Settings Extension
 
-- Version: 1.3.4
+- Version: 1.3.5
 - Author: Stephen Bau (stephen@domain7.com)
 - Website: http://www.domain7.com/
 - Build Date: 5 November 2011
@@ -26,6 +26,10 @@ Be sure that your configuration settings are backed up before using this extensi
 
 
 ## Change Log
+
+Version 1.3.5 - 5 November 2011
+
+- Handle special characters for the Site Name setting on the Preferences page
 
 Version 1.3.4 - 5 November 2011
 

@@ -5,7 +5,7 @@
 			return array(
 				'name'	=> 'Configuration Settings',
 				'type'	=> 'interface',
-				'version'	=> '1.3.4',
+				'version'	=> '1.3.5',
 				'release-date'	=> '2011-11-05',
 				'author'		=> array(
 					'name'			=> 'Stephen Bau',
@@ -65,7 +65,7 @@
 
 			$sitename = Symphony::Configuration()->get('sitename', 'general');
 			$label = new XMLElement('label', __('Website Name'));			
-			$label->appendChild(Widget::Input('settings[general][sitename]', $sitename, 'text'));
+			$label->appendChild(Widget::Input('settings[general][sitename]', htmlspecialchars($sitename), 'text'));
 			
 			$group->appendChild($label);						
 			$context['wrapper']->appendChild($group);
