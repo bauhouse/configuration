@@ -1,9 +1,9 @@
 # Configuration Settings Extension
 
-- Version: 1.3.3
+- Version: 1.3.4
 - Author: Stephen Bau (stephen@domain7.com)
 - Website: http://www.domain7.com/
-- Build Date: 10 February 2011
+- Build Date: 5 November 2011
 - Requirements: Symphony 2.2
 
 
@@ -26,6 +26,11 @@ Be sure that your configuration settings are backed up before using this extensi
 
 
 ## Change Log
+
+Version 1.3.4 - 5 November 2011
+
+- Fixed a minor bug when using this in conjunction with search index: Escape value output for parameters in case they contain special characters. (Contributed by [David Anderson](http://symphony-cms.com/get-involved/member/davjand/).)
+- Update Romanian translation. (Contributed by [Vlad Ghita](http://symphony-cms.com/get-involved/member/vladG/).)
 
 Version 1.3.3 - 10 February 2011
 

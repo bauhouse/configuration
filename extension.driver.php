@@ -5,8 +5,8 @@
 			return array(
 				'name'	=> 'Configuration Settings',
 				'type'	=> 'interface',
-				'version'	=> '1.3.3',
-				'release-date'	=> '2011-02-10',
+				'version'	=> '1.3.4',
+				'release-date'	=> '2011-11-05',
 				'author'		=> array(
 					'name'			=> 'Stephen Bau',
 					'website'		=> 'http://www.domain7.com/',
