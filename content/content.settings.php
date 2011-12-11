@@ -6,16 +6,16 @@ define_safe('BASE_URL', URL . '/symphony/extension/configuration/settings');
 
 Class contentExtensionConfigurationSettings extends AdministrationPage{
 
-    private $_driver;
+	private $_driver;
 	private $_page;
 	private $_flag;
 
-    function __construct(&$parent){
-        parent::__construct($parent);
-		
-        $this->_driver = Symphony::ExtensionManager()->create('configuration');
-    }
-	
+	function __construct(){
+		parent::__construct();
+
+		$this->_driver = ExtensionManager::create('configuration');
+	}
+
 	function view(){			
 		$this->__switchboard();	
 	}
