@@ -1,23 +1,6 @@
 <?php
 	
 	class extension_configuration extends Extension {
-		public function about() {
-			return array(
-				'name'	=> 'Configuration Settings',
-				'type'	=> 'interface',
-				'version'	=> '1.3.5',
-				'release-date'	=> '2011-11-05',
-				'author'		=> array(
-					'name'			=> 'Stephen Bau',
-					'website'		=> 'http://www.domain7.com/',
-					'email'			=> 'stephen@domain7.com'
-				),
-				'description'	=> 'Admin interface for Symphony System Preferences',
-				'compatibility' => array(
-					'2.2' => true
-				)
-	 		);
-		}
 		
 		public function fetchNavigation(){ 
 			return array(
