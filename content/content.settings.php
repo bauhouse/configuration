@@ -10,8 +10,8 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 	private $_page;
 	private $_flag;
 
-    function __construct(&$parent){
-        parent::__construct($parent);
+    function __construct(){
+        parent::__construct();
 		
         $this->_driver = Symphony::ExtensionManager()->create('configuration');
     }

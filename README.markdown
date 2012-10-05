@@ -27,6 +27,10 @@ Be sure that your configuration settings are backed up before using this extensi
 
 ## Change Log
 
+Version 1.4 - 5 October 2012
+
+- Updated for Symphony 2.3
+
 Version 1.3.5 - 5 November 2011
 
 - Handle special characters for the Site Name setting on the Preferences page
