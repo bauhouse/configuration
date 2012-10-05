@@ -1,10 +1,10 @@
 # Configuration Settings Extension
 
-- Version: 1.3.5
+- Version: 1.4
 - Author: Stephen Bau (stephen@domain7.com)
 - Website: http://www.domain7.com/
-- Build Date: 5 November 2011
-- Requirements: Symphony 2.2
+- Build Date: 5 October 2012
+- Requirements: Symphony 2.3
 
 
 ## Note
