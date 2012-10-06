@@ -111,6 +111,9 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 		$config_settings = Symphony::Configuration()->get();
 
 		$count = 0;
+		
+		$acronymsarray = array( 'db', 'gc', 'tbl', 'xml' );
+		$smallwordsarray = array( 'in' );
 
 		foreach($config_settings as $key => $groups)
 		{
@@ -127,7 +130,15 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 				$setting_group_data = '<input name="settings[' . $count . '][group]" type="hidden" value="' . $setting_group . '" />' . strtoupper($setting_group);
 				$setting_name_data = '<input name="settings[' . $count . '][name]" type="hidden" value="' . $setting_name . '" />' . $setting_name;
 
-				$label = Widget::Label(ucfirst(str_replace('_', ' ', $setting_name)));
+				## Format setting title
+				$setting_title = str_replace('_', ' ', $setting_name);
+				$words = explode(' ', $setting_title);
+				foreach ($words as $key => $word) { if (in_array($word, $acronymsarray)) $words[$key] = strtoupper($word); }
+				foreach ($words as $key => $word) { if (!in_array($word, $smallwordsarray)) $words[$key] = ucfirst($word); }
+				$setting_title = implode(' ', $words);
+				
+				## Create markup for fields
+				$label = Widget::Label($setting_title);
 				$label->appendChild(Widget::Input('settings[' . $count . '][group]', $setting_group, 'hidden'));
 				$label->appendChild(Widget::Input('settings[' . $count . '][name]', $setting_name, 'hidden'));
 				$label->appendChild(Widget::Input('settings[' . $count . '][value]', htmlspecialchars($setting_value)));
