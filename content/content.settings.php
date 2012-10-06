@@ -118,7 +118,7 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 
 			$fieldset = new XMLElement('fieldset');
 			$fieldset->setAttribute('class', 'settings type-file');
-			$fieldset->appendChild(new XMLElement('legend', __(strtoupper(str_replace('_', ' ', $setting_group)))));
+			$fieldset->appendChild(new XMLElement('legend', __(ucfirst(str_replace('_', ' ', $setting_group)))));
 
 			foreach($groups as $name => $value) {
 				$setting_name = $name;
