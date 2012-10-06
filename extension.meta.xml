@@ -14,11 +14,13 @@
 		</author>
 	</authors>
 	<releases>
-		<release version="1.4" date="2012-10-06" min="2.3">
-			- Updated for Symphony 2.3 (Contributed by [Brian Zerangue](http://symphony-cms.com/get-involved/member/bzerangue/).)
+		<release version="1.5" date="2012-10-06" min="2.3">
 			- Moved the Configuration page into the System menu
 			- Formatted legend and setting field labels to use title case
 			- Disabled the database settings fields to make them read-only
+		</release>
+		<release version="1.4" date="2012-10-05" min="2.3">
+			- Updated for Symphony 2.3 (Contributed by [Brian Zerangue](http://symphony-cms.com/get-involved/member/bzerangue/).)
 		</release>
 		<release version="1.3.5" date="2011-11-05" min="2.2" max="2.2.5">
 			- Handle special characters for the Site Name setting on the Preferences page
