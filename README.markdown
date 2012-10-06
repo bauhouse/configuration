@@ -3,7 +3,7 @@
 - Version: 1.4
 - Author: Stephen Bau (stephen@domain7.com)
 - Website: http://www.domain7.com/
-- Build Date: 5 October 2012
+- Build Date: 6 October 2012
 - Requirements: Symphony 2.3
 
 
@@ -27,9 +27,12 @@ Be sure that your configuration settings are backed up before using this extensi
 
 ## Change Log
 
-Version 1.4 - 5 October 2012
+Version 1.4 - 6 October 2012
 
-- Updated for Symphony 2.3
+- Updated for Symphony 2.3 (Contributed by [Brian Zerangue](http://symphony-cms.com/get-involved/member/bzerangue/).)
+- Moved the Configuration page into the System menu
+- Formatted legend and setting field labels to use title case
+- Disabled the database settings fields to make them read-only
 
 Version 1.3.5 - 5 November 2011
 
