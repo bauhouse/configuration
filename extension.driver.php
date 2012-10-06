@@ -5,7 +5,7 @@
 		public function fetchNavigation(){ 
 			return array(
 				array(
-					'location'	=> 200,
+					'location'	=> __('System'),
 					'name'		=> __('Configuration'),
 					'link'		=> '/settings/edit/',
 					'limit'		=> 'developer'
