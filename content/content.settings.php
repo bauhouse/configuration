@@ -6,21 +6,21 @@ define_safe('BASE_URL', URL . '/symphony/extension/configuration/settings');
 
 Class contentExtensionConfigurationSettings extends AdministrationPage{
 
-    private $_driver;
+	private $_driver;
 	private $_page;
 	private $_flag;
 
-    function __construct(){
-        parent::__construct();
-		
-        $this->_driver = Symphony::ExtensionManager()->create('configuration');
-    }
-	
-	function view(){			
-		$this->__switchboard();	
+	function __construct(){
+		parent::__construct();
+
+		$this->_driver = Symphony::ExtensionManager()->create('configuration');
 	}
-	
-	function action(){			
+
+	function view(){
+		$this->__switchboard();
+	}
+
+	function action(){
 		$this->__switchboard('action');
 		if (array_key_exists('save', $_POST['action'])) $this->save();
 		if (array_key_exists('edit', $_POST['action'])) $this->edit();
@@ -30,39 +30,39 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 
 		$this->_page = $this->_context['0'];
 		$this->_flag = $this->_context['1'];
-	
+
 		$function = ($type == 'action' ? '__action' : '__view') . (isset($this->_page) ? ucfirst($this->_page) : 'Index') ;
-		
+
 		if(!method_exists($this, $function)) {
-			
+
 			## If there is no action function, just return without doing anything
 			if($type == 'action') return;
-			
+
 			Symphony::Engine()->errorPageNotFound();
-			
+
 		}
-		
+
 		$this->$function();
 
 	}
-	
-	function __viewIndex(){			
+
+	function __viewIndex(){
 
 		$link = new XMLElement('link');
 		$this->addElementToHead($link, 500);
 
 		$this->setTitle(__('%1$s &ndash; %2$s', array(__('Symphony'), __('Configuration'))));
-        $this->setPageType('table');
+		$this->setPageType('table');
 
 		$this->appendSubheading(__('Configuration'));
-		
+
 		## Table Headings
 		$aTableHead = array(
 			array('Group', 'col'),
 			array('Setting', 'col'),
 			array('Value', 'col')
-		);			
-		
+		);
+
 		## Get Configuration Settings and display as a table list
 		$config_settings = Symphony::Configuration()->get();
 
@@ -74,16 +74,16 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 				$setting_group = $key;
 				$setting_name = $name;
 				$setting_value = $value;
-			
+
 				$tableData[] = Widget::TableData($setting_group);
 				$tableData[] = Widget::TableData($setting_name);
 				$tableData[] = Widget::TableData($setting_value);
-			
+
 				$aTableBody[] = Widget::TableRow($tableData, ($bEven ? 'even' : NULL));
 
 				$bEven = !$bEven;
-					
-				unset($tableData);		
+
+				unset($tableData);
 			}
 		}
 
@@ -94,16 +94,16 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 		$tableActions = new XMLElement('div');
 		$tableActions->setAttribute('class', 'actions');
 		$tableActions->appendChild(Widget::Input('action[edit]', __('Edit Settings'), 'submit'));
-        $this->Form->appendChild($tableActions); 
+		$this->Form->appendChild($tableActions); 
 	}
 
-	function __viewEdit(){			
-	
+	function __viewEdit(){
+
 		$link = new XMLElement('link');
 		$this->addElementToHead($link, 500);
 
 		$this->setTitle(__('%1$s &ndash; %2$s', array(__('Symphony'), __('Configuration'))));
-        $this->setPageType('form');
+		$this->setPageType('form');
 
 		$this->appendSubheading(__('Configuration'));
 
@@ -123,16 +123,16 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 			foreach($groups as $name => $value) {
 				$setting_name = $name;
 				$setting_value = $value;
-				
+
 				$setting_group_data = '<input name="settings[' . $count . '][group]" type="hidden" value="' . $setting_group . '" />' . strtoupper($setting_group);
 				$setting_name_data = '<input name="settings[' . $count . '][name]" type="hidden" value="' . $setting_name . '" />' . $setting_name;
-				
+
 				$label = Widget::Label(ucfirst(str_replace('_', ' ', $setting_name)));
 				$label->appendChild(Widget::Input('settings[' . $count . '][group]', $setting_group, 'hidden'));
 				$label->appendChild(Widget::Input('settings[' . $count . '][name]', $setting_name, 'hidden'));
 				$label->appendChild(Widget::Input('settings[' . $count . '][value]', htmlspecialchars($setting_value)));
 				$fieldset->appendChild($label);
-				
+
 				$count++;
 
 			}
@@ -151,15 +151,15 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 		if(isset($this->_flag))
 		{
 			switch($this->_flag){
-				
+
 				case 'saved':
 					$this->pageAlert(__('Configuration Settings updated successfully.'), Alert::SUCCESS);
 					break;
-					
+
 				case 'error':
 					$this->pageAlert(__('An error occurred.'), Alert::NOTICE);
 					break;
-				
+
 			}
 		}
 	}
@@ -181,6 +181,6 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 	function edit() {
 		return redirect(BASE_URL . '/edit/');
 	}
-	
+
 }
 ?>
