@@ -141,7 +141,11 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 				$label = Widget::Label($setting_title);
 				$label->appendChild(Widget::Input('settings[' . $count . '][group]', $setting_group, 'hidden'));
 				$label->appendChild(Widget::Input('settings[' . $count . '][name]', $setting_name, 'hidden'));
-				$label->appendChild(Widget::Input('settings[' . $count . '][value]', htmlspecialchars($setting_value)));
+				if ($setting_group == 'database') {
+					$label->appendChild(Widget::Input('settings[' . $count . '][value]', htmlspecialchars($setting_value), 'text', array('disabled'=>'disabled')));
+				} else {
+					$label->appendChild(Widget::Input('settings[' . $count . '][value]', htmlspecialchars($setting_value)));
+				}
 				$fieldset->appendChild($label);
 
 				$count++;
