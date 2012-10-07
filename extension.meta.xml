@@ -3,7 +3,7 @@
 	<name>Configuration Settings</name>
 	<description>Admin interface for Symphony System Preferences</description>
 	<repo type="github">https://github.com/bauhouse/configuration</repo>
-	<url type="discuss">http://symphony-cms.com/discuss/thread/581/</url>
+	<url type="discuss">http://getsymphony.com/discuss/thread/581/</url>
 	<types>
 		<type>Interface</type>
 	</types>
