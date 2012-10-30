@@ -14,7 +14,12 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="1.6" date="2012-10-29" min="2.3">
+			- Set the database settings fields to be read-only, not disabled
+			- Add `Read Only` to the label of database field inputs
+		</release>
 		<release version="1.5" date="2012-10-06" min="2.3">
+			- NOTE: THIS VERSION IS UNUSABLE. It looked great, but sets your database credentials to `null`. (My sincere apologies.)
 			- Moved the Configuration page into the System menu
 			- Formatted legend and setting field labels to use title case
 			- Disabled the database settings fields to make them read-only

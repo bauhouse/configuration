@@ -1,9 +1,9 @@
 # Configuration Settings Extension
 
-- Version: 1.5
+- Version: 1.6
 - Author: Stephen Bau (stephen@domain7.com)
 - Website: http://www.domain7.com/
-- Build Date: 6 October 2012
+- Build Date: 29 October 2012
 - Requirements: Symphony 2.3
 
 
@@ -26,6 +26,11 @@ Be sure that your configuration settings are backed up before using this extensi
 
 
 ## Change Log
+
+Version 1.6 - 29 October 2012
+
+- Set the database settings fields to be read-only, not disabled
+- Add `Read Only` to the label of database field inputs
 
 Version 1.5 - 6 October 2012
 
