@@ -138,13 +138,17 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 				$setting_title = implode(' ', $words);
 				
 				## Create markup for fields
-				$label = Widget::Label($setting_title);
+				if ($setting_group == 'database') {
+					$label = Widget::Label($setting_title . ' <i>Read Only</i>');
+				} else {
+					$label = Widget::Label($setting_title);
+				}
 				$label->appendChild(Widget::Input('settings[' . $count . '][group]', $setting_group, 'hidden'));
 				$label->appendChild(Widget::Input('settings[' . $count . '][name]', $setting_name, 'hidden'));
 				
 				## Disable database settings fields
 				if ($setting_group == 'database') {
-					$label->appendChild(Widget::Input('settings[' . $count . '][value]', htmlspecialchars($setting_value), 'text', array('disabled'=>'disabled')));
+					$label->appendChild(Widget::Input('settings[' . $count . '][value]', htmlspecialchars($setting_value), 'text', array('readonly'=>'true')));
 				} else {
 					$label->appendChild(Widget::Input('settings[' . $count . '][value]', htmlspecialchars($setting_value)));
 				}
