@@ -1,9 +1,9 @@
 # Configuration Settings Extension
 
-- Version: 1.6
-- Author: Stephen Bau (stephen@domain7.com)
-- Website: http://www.domain7.com/
-- Build Date: 29 October 2012
+- Version: 1.7
+- Author: Stephen Bau (bauhouse@gmail.com)
+- Website: http://stephenbau.com/
+- Build Date: 11 February 2013
 - Requirements: Symphony 2.3
 
 
@@ -26,6 +26,10 @@ Be sure that your configuration settings are backed up before using this extensi
 
 
 ## Change Log
+
+Version 1.7 - 11 February 2013
+
+- Add Italian language translation
 
 Version 1.6 - 29 October 2012
 
