@@ -19,7 +19,7 @@
 		'Nome do Site',
 
 		'Website Name' => 
-		'Nome Site',
+		'Nome do Website',
 
 		'Edit Settings' => 
 		'Editar Configurações',
