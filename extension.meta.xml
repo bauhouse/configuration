@@ -14,6 +14,9 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="1.7.1" date="2013-02-12" min="2.3">
+			- Add Portuguese language translation
+		</release>
 		<release version="1.7" date="2013-02-11" min="2.3">
 			- Add Italian language translation
 		</release>
