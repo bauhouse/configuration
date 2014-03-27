@@ -1,10 +1,10 @@
 # Configuration Settings Extension
 
-- Version: 1.7.1
+- Version: 1.8
 - Author: Stephen Bau (bauhouse@gmail.com)
 - Website: http://stephenbau.com/
-- Build Date: 12 February 2013
-- Requirements: Symphony 2.3
+- Build Date: 26 March 2014
+- Requirements: Symphony 2.3.6
 
 
 ## Note

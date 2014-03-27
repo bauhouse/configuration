@@ -14,6 +14,10 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="1.8" date="2014-03-26" min="2.3.6">
+			- Replace saveConfig method with Configuration write method
+			- Format setting group title
+		</release>
 		<release version="1.7.1" date="2013-02-12" min="2.3">
 			- Add Portuguese language translation
 		</release>
