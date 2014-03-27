@@ -195,7 +195,7 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 
 			Symphony::Configuration()->set($setting_name, $setting_value, $setting_group);
 		}
-		Administration::instance()->saveConfig();
+		Symphony::Configuration()->write();
 		return redirect(BASE_URL . '/edit/saved/');
 	}
 
