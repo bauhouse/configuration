@@ -112,7 +112,7 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 
 		$count = 0;
 		
-		$acronymsarray = array( 'db', 'gc', 'tbl', 'xml' );
+		$acronymsarray = array( 'db', 'gc', 'tbl', 'xml', 'smtp' );
 		$smallwordsarray = array( 'in' );
 
 		foreach($config_settings as $key => $groups)
@@ -121,7 +121,14 @@ Class contentExtensionConfigurationSettings extends AdministrationPage{
 
 			$fieldset = new XMLElement('fieldset');
 			$fieldset->setAttribute('class', 'settings type-file');
-			$fieldset->appendChild(new XMLElement('legend', __(ucfirst(str_replace('_', ' ', $setting_group)))));
+
+			## Format setting group title
+			$setting_group_title = str_replace('_', ' ', $setting_group);
+			$words = explode(' ', $setting_group_title);
+			foreach ($words as $key => $word) { if (in_array($word, $acronymsarray)) $words[$key] = strtoupper($word); }
+			foreach ($words as $key => $word) { if (!in_array($word, $smallwordsarray)) $words[$key] = ucfirst($word); }
+			$setting_group_title = implode(' ', $words);
+			$fieldset->appendChild(new XMLElement('legend', __($setting_group_title)));
 
 			foreach($groups as $name => $value) {
 				$setting_name = $name;
