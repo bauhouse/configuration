@@ -14,7 +14,7 @@
 		</author>
 	</authors>
 	<releases>
-		<release version="1.8" date="2014-03-26" min="2.3.6">
+		<release version="1.8" date="2014-03-26" min="2.3.6" max="2.4.x">
 			- Replace saveConfig method with Configuration write method
 			- Format setting group title
 		</release>
