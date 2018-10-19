@@ -20,6 +20,6 @@ Be sure that your configuration settings are backed up before using this extensi
 
 ## Usage
 
-- A "Configuration" menu is added to the Symphony administration interface that provides an an "Edit Configuration Settings" page.
+- A "Configuration" menu is added to the Symphony administration interface that provides an "Edit Configuration Settings" page.
 - The current version of Symphony is displayed on the "Preferences" page.
 - Modify the Site Name on the "Preferences" page.
